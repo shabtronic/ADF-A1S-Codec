@@ -53,7 +53,7 @@ esp_err_t AC101_i2s_config_clock(es_i2s_clock_t cfg)
 
 esp_err_t AC101_set_voice_mute(bool enable)
     {
-    printf("AC101 set voice mute called\n");
+  //  printf("AC101 set voice mute called\n");
     return true;
     /*
     esp_err_t res = ESP_OK;
@@ -67,7 +67,7 @@ esp_err_t AC101_set_voice_mute(bool enable)
 static int i2c_init()
 {
     int res;
-    printf("AC101 I2C init called\n");
+   // printf("AC101 I2C init called\n");
     res = i2c_param_config(IIC_PORT, &es_i2c_cfg);
     res |= i2c_driver_install(IIC_PORT, es_i2c_cfg.mode, 0, 0, 0);
     AC_ASSERT(res, "i2c_init error", -1);
@@ -119,7 +119,7 @@ static uint16_t AC101_read_Reg(uint8_t reg) {
 
 void set_codec_clk(audio_hal_iface_samples_t sampledata)
 {
-    printf("AC101 Set codec clck called....\n");
+   // printf("AC101 Set codec clck called....\n");
 	uint16_t sample;
 	switch(sampledata)
 	{
@@ -369,15 +369,15 @@ esp_err_t AC101_config_i2s(audio_hal_codec_mode_t mode, audio_hal_codec_i2s_ifac
 	 //	break;
 	case AUDIO_HAL_BIT_LENGTH_16BITS:
 		bits = BIT_LENGTH_16_BITS;
-        printf("Setting AC101 Codec to 16bits\n");
+     //   printf("Setting AC101 Codec to 16bits\n");
 		break;
 	case AUDIO_HAL_BIT_LENGTH_24BITS:
 		bits = BIT_LENGTH_24_BITS;
-        printf("Setting AC101 Codec to 24bits\n");
+     //   printf("Setting AC101 Codec to 24bits\n");
 		break;
 	default:
 		bits = BIT_LENGTH_16_BITS;
-        printf("Setting AC101 Codec to 16bits\n");
+      //  printf("Setting AC101 Codec to 16bits\n");
 	}
 
 	switch(iface->fmt)						//0x10
@@ -402,35 +402,35 @@ esp_err_t AC101_config_i2s(audio_hal_codec_mode_t mode, audio_hal_codec_i2s_ifac
 	switch(iface->samples)
 	{
 	case AUDIO_HAL_08K_SAMPLES:
-        printf("Setting AC101 Codec SR to 8khz\n");
+    //    printf("Setting AC101 Codec SR to 8khz\n");
 		sample = SIMPLE_RATE_8000;
 		break;
 	case AUDIO_HAL_11K_SAMPLES:
-        printf("Setting AC101 Codec SR to 11khz\n");
+     //   printf("Setting AC101 Codec SR to 11khz\n");
 		sample = SIMPLE_RATE_11052;
 		break;
 	case AUDIO_HAL_16K_SAMPLES:
-        printf("Setting AC101 Codec SR to 16khz\n");
+     //   printf("Setting AC101 Codec SR to 16khz\n");
 		sample = SIMPLE_RATE_16000;
 		break;
 	case AUDIO_HAL_22K_SAMPLES:
-        printf("Setting AC101 Codec SR to 22lhz\n");
+      //  printf("Setting AC101 Codec SR to 22lhz\n");
 		sample = SIMPLE_RATE_22050;
 		break;
 	case AUDIO_HAL_24K_SAMPLES:
-        printf("Setting AC101 Codec SR to 24khz\n");
+      //  printf("Setting AC101 Codec SR to 24khz\n");
 		sample = SIMPLE_RATE_24000;
 		break;
 	case AUDIO_HAL_32K_SAMPLES:
-        printf("Setting AC101 Codec SR to 32khz\n");
+      //  printf("Setting AC101 Codec SR to 32khz\n");
 		sample = SIMPLE_RATE_32000;
 		break;
 	case AUDIO_HAL_44K_SAMPLES:
-        printf("Setting AC101 Codec SR to 44khz\n");
+     //   printf("Setting AC101 Codec SR to 44khz\n");
 		sample = SIMPLE_RATE_44100;
 		break;
 	case AUDIO_HAL_48K_SAMPLES:
-        printf("Setting AC101 Codec SR to 48khz\n");
+      //  printf("Setting AC101 Codec SR to 48khz\n");
 		sample = SIMPLE_RATE_48000;
 		break;
 //	case AUDIO_HAL_96K_SAMPLES:
@@ -440,7 +440,7 @@ esp_err_t AC101_config_i2s(audio_hal_codec_mode_t mode, audio_hal_codec_i2s_ifac
 //		sample = SIMPLE_RATE_192000;
 //		break;
 	default:
-        printf("Setting AC101 Codec SR to 44100\n");
+     //   printf("Setting AC101 Codec SR to 44100\n");
 		sample = SIMPLE_RATE_44100;
 	}
 

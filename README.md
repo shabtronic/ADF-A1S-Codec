@@ -19,6 +19,6 @@ Latest commit
 
 Installing:
 
-You simple copy all the files over your current ADF Audio_Board and Audio_Hal directories and
-idf.py menuconfig should allow you to select the A1S board.
+You simply copy all the files over your current ADF Audio_Board and Audio_Hal directories.
+"idf.py menuconfig" should then allow you to select the A1S board.
 

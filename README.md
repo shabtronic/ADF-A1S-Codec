@@ -17,4 +17,8 @@ https://github.com/donny681/esp-adf
 Latest commit
 26505bd
 
+Installing:
+
+You simple copy all the files over your current ADF Audio_Board and Audio_Hal directories and
+idf.py menuconfig should allow you to select the A1S board.
 
